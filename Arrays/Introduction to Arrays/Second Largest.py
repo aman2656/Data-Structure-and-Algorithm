@@ -1,26 +1,20 @@
 """
-You are given an integer array A. You have to find the second largest element/value in the array or report that no such element exists.
+You are given an integer array A. You have to find the second largest element/value in the array or report that no such element exists. I not exist then return -1
 """
-def second_largest(arr,n):
-    ans = None
-    # YOUR CODE GOES HERE
-    if len(arr) == 1:
-        return -1
-    ma = arr[0]
-    index = 0
-    se = arr[0]
-    for i in range(1, len(arr)):
-        if arr[i]>ma:
-            ma = arr[i]
-            index = i
-    for j in range(0, len(arr)):
-        if arr[j] <= ma:
-            if j!=index:
-                if arr[j] > se:
-                    se = arr[j]
-    return se
-        
-
-    
-    
-    return ans
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        if len(A) == 1:
+            return -1
+        first = A[0]
+        second = A[0]
+        for i in range(1, len(A)):
+            if first < A[i]:
+                second = first
+                first = A[i]
+                continue
+            else:
+                if second <= A[i]:
+                    second = A[i]
+        return second
