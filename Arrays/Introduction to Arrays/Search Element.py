@@ -9,15 +9,10 @@ def main():
     for i in range(t):
         a = [int(x) for x in input().split()]
         b = int(input())
-        # a = a[0]
         nums = a[1:]
-        f=0
-        for j in nums:
-            if j==b:
-                print('1')
-                f = 1
-                break
-        if f == 0:
+        if b in nums:
+            print('1')
+        else:
             print('0')
     return 0
 
