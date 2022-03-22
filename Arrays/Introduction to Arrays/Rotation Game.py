@@ -1,3 +1,8 @@
+"""
+Given an integer array A and an integer B, you have to print the same array after rotating it B times towards the right.
+
+NOTE: You can't use extra memory.
+"""
 def main():
     # YOUR CODE GOES HERE
     # Please take input and print output to standard input/output (stdin/stdout)
