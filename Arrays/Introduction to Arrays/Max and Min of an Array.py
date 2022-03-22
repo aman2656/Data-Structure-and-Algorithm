@@ -1,3 +1,6 @@
+"""
+Write a program to print maximum and minimum elements of the input array A of size N where you have to take integer N and other N elements as input from the user.
+"""
 def main():
     # YOUR CODE GOES HERE
     # Please take input and print output to standard input/output (stdin/stdout)
