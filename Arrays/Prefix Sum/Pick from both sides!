@@ -1,0 +1,15 @@
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self, A, B):
+        su = sum(A[:B])
+        ma = su
+        l = B-1
+        u = len(A)-1
+        while l>=0 and u>=0:
+            su = su+A[u]-A[l]
+            ma = max(su, ma)
+            u-=1
+            l-=1
+        return ma
