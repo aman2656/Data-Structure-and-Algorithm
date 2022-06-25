@@ -1,0 +1,16 @@
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        def find_max(A):
+            ma = A[0]
+            for i in range(1, len(A)):
+                if A[i]>ma:
+                    ma = A[i]
+            return ma
+
+        ma = max(A)
+        total_time = 0
+        for i in A:
+            total_time+=ma-i
+        return total_time
