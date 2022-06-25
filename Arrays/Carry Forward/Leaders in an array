@@ -1,0 +1,14 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        c=1
+        ans = []
+        maxx = A[len(A)-1]
+        ans.append(maxx)
+        for i in range(len(A)-2, -1, -1):
+            if A[i]>maxx:
+                maxx = A[i]
+                ans.append(maxx)
+                c+=1
+        return ans
