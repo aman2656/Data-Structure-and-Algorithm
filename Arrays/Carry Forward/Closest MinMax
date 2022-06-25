@@ -1,0 +1,25 @@
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        min_sequence_length = len(A)
+        minn = min(A)
+        maxx = max(A)
+        min_index = -1
+        max_index = -1
+        if len(A)==1:
+            return 1
+        #cond1-> maxx at the left side and minn at the right side
+        for i in range(len(A)-1, -1, -1):
+            if A[i] == minn:
+                min_index = i
+            if A[i] == maxx and min_index != -1:
+                min_sequence_length = min(min_sequence_length, min_index-i+1)
+
+        #cond2-> min at the left side and max at the right side
+        for i in range(len(A)-1, -1, -1):
+            if A[i] == maxx:
+                max_index = i
+            if A[i] == minn and max_index != -1:
+                min_sequence_length = min(min_sequence_length, max_index-i+1)
+        return min_sequence_length
