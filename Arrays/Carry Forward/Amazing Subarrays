@@ -1,0 +1,11 @@
+class Solution:
+    # @param A : string
+    # @return an integer
+    def solve(self, A):
+        A = list(A)
+        n = len(A)
+        ans = 0
+        for i in range(len(A)):
+            if A[i] in ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']:
+                ans = ans + (n-i)
+        return ans%10003
