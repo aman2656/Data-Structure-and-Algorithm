@@ -1,0 +1,12 @@
+class Solution:
+    # @param A : string
+    # @return an integer
+    def solve(self, A):
+        count_g = 0
+        sum = 0
+        for i in range(len(A)-1, -1, -1):
+            if A[i] == 'G':
+                count_g+=1
+            if A[i] == 'A':
+                sum+=count_g
+        return sum
