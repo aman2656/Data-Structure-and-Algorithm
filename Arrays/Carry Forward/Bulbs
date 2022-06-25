@@ -1,0 +1,15 @@
+class Solution:
+	# @param A : list of integers
+	# @return an integer
+	def bulbs(self, A):
+        if A.count(1)==len(A):
+            return 0
+        c = 0
+        for i in A:
+            if i == 0:
+                if c%2==0:
+                    c+=1
+            if i == 1:
+                if c%2 != 0:
+                    c+=1
+        return c
